@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Aula 9 - Portfólio </title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- o HTML tem duas partes, 
+HEAD - parte que não aparece na página, mas tem alguns dados pro computador e BODY - a parte estrutural, que realmente aparece tudo -->
+
+<!-- nossas tres partes, BODY = corpo e dentro do corpo, tem o HEADER = cabeçalho e MAIN = principal -->
+
+<!-- o HTML é feito em tags, então para colocar a imagem, usamos a tag de imagem que é, Precisamos indicar também a fonte/origem dessa imagem, que é por src (source, fonte em ingles) -->
+
+<!-- as tags você sempre abre e depois fecha, colocando o que você quer no meio <> </> -->
+
+<body>
+
+  <!-- aqui é uma div que vai englobar o header e o main, e vamos diferenciar ela por classe para conseguir puxar apenas ela, porque temos outras div(divisões) -->
+  <div class="container">
+    <header class="cabecalho">
+      <!--vamos englobar a foto e o titulo em uma div nova, que abre antes da foto e fecha antes do tema-->
+      <div class = "perfil">
+      <img class="perfil-foto" src="https://pbs.twimg.com/profile_images/1505570741869330435/aaJYYo_j_400x400.jpg">
+      <!-- div é divisão, então estamos criando a divisão de texto, h1 é heading 1, que significa título 1
+ existe vários tipos de títulos, h1 até h4 -->
+      <div class="titulo">
+        <h1> Isabella Sales </h1>
+        <h3> Escritora, marketeira e aspirante à dev. </h3>
+      </div>
+      </div>
+      <!-- para a gente colocar o botão no canto sperior, para mudar o tema-->
+<div class = "tema">
+  <!-- agora vamos criar o botão com um direcionamento de função no ONCLICK, que vamos usar no JS depois-->
+  <button onclick="mudarTema()"> Alterar tema </button>
+</div>
+    </header>
+    <!-- agora vamos fazer a parte principal, no MAIN-->
+    <main class="projetos">
+      <!-- vamos criar então uma lista no HTML para listar todos os nossos projetos.
+
+Criamos a lista com UL, que é unordered list abreviado. Significa LISTA NÃO ORDENADA, como não temos números, é essa que vamos usar.-->
+      <ul class = "projetos-titulo"> Projetos <ul>
+          <!-- depois de criar a lista com o titulo, precisamos criar os ITEMS DAS LISTAS, que é com LI (list item em inglês). Então abre e fecha uma tag li para cada link-->
+          <!-- cada item da lista vai ser um link, então precisamos falar para o HTML, usando a tag de link
+a tag de link é <a href = "LINK QUE QUEREMOS USAR"> TEXTO </a>. É a de âncora, e href significa REFERENCIA.-->
+          <!-- para pegar os EMOJIS para o titulo, procurar IEMOJI no google e escolher o emoji que quer, copiar como texto-->
+        <!-- os LIs tem a mesma classe porque queremos estilizar eles juntos no CSS-->
+        <!-- agora não vamos usar o A HREF, porque vamos colocar a imagem do projeto EMBEDADO como link. 
+Embedado é meio que "colocado"-->
+        
+          <li class="projetos-item"><p> 🎥 Aluraflix </p>
+            <!-- para pegar esse código a seguir, vamos no projeto que voce quer pegar, e apertar EMBED (ao lado do FORK), e copiar o código da janela "HTML (recommmended)"-->
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="gOoYbVb" data-user="persphones" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/persphones/pen/gOoYbVb">
+  AluraFlix v1- ID3</a> by Isabella (<a href="https://codepen.io/persphones">@persphones</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+          </li>
+        
+          <li class="projetos-item"><p> 📚 Calculadora de Média </p>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="bGYJyej" data-user="persphones" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/persphones/pen/bGYJyej">
+  Calculadora de média</a> by Isabella (<a href="https://codepen.io/persphones">@persphones</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            
+          </li>
+
+    </main>
+  </div>
+</body>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

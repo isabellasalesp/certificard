@@ -1,0 +1,162 @@
+/* vimos no figma que fonte e que tamanhos estamos usando, e ai procuramos a fonte no Google Font. Selecionamos a fonte, e os pesos que queremos e clicamos em import para pegar esse código */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* para puxar tags em geral, não precisa do . */
+body {
+  /* background é fundo, pegamos essa linfo das cores e os números do projeto do figma atráves do INSPECT no elemento do fundo */
+  /* esse # seguido com números é a cor, pesquisar no google: Hexcode */
+  background: linear-gradient(236.85deg, #041832 27.26%, #3468a7 96.03%);
+  /* essa informação também pegamos no google fonts: 
+  estamos falando família da fonte: Roboto, sem serifa */
+  font-family: "Roboto", sans-serif;
+}
+
+/* para puxar o elemento pela classe, precisa do . 
+se a gente colocasse apenas div, ia puxar todas as divs da página. container estamos puxando só a div class container */
+
+/* para adicionar e arrumar o fundo branco */
+.container {
+  /* cor do fundo */ 
+  background: #ecf4ff;
+  /* cor da fonte */
+  color: #1c1c1c;
+  /* para deixar o fundo azul maior, criamos uma margem para separar os dois elementos */
+  margin: 64px;
+  /* raio da borda para o container, para deixar a borda redonda */
+  border-radius: 20px;
+  /* para dar um efeito de sombra na caixa 
+  os 6px são o tamanho que indica, e o #numeros é a cor */
+  box-shadow: 6px 6px 6px #0e1d2f;
+/* padding é parecido com margin, mas atua um pouco diferente. A margem tá dando uma margem do elemento externo pro elemento que estamos mexendo, e o padding faz ao contrário (dá margem ao elemento que estamos editando para os elementos que estão dentro dele) */
+  padding: 64px;
+}
+
+/* cabecalho é a nossa div que tem a foto, os titulos e o botão
+ /* o flex box (Caixa flexivel) permite posicionar objetos da forma que a gente preferir. para começar, colocamos o código: */
+  /* display: forma de mostrar */
+
+.cabecalho {
+  display: flex;
+  /* e queremos que o conteúdo esteja JUSTIFICADO (ocupando todo o quadrado da divisão), mas com espaço entre eles. O codigo em pt: JUSTIFICAR-CONTEDO: ESPACO-ENTRE; */
+    justify-content: space-between;
+}
+
+
+/* perfil é a classe que determinamos para a div que tem a foto e os titulos */
+.perfil {
+   display: flex;
+}
+
+/* para deixar a imagem do perfil redonda, criamos a classe */
+.perfil-foto {
+  border-radius:400px; 
+  /* e para definir a altura máxima */
+  max-height: 160px;
+  /* um filtro para a foto no figma */
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* para nao deixar o titulo grudado na foto */
+.titulo {
+  margin-left: 16px; 
+}
+
+/* eu quero estilizar o elemento h1 que esta dentro do elemento com classe TITULO */
+.titulo h1 {
+ /* para mexer o peso da fonte, mexemos no FONT WEIGHT. weight = peso (font-weight) */
+  font-weight: 700;
+  /* o tamanho da fonte, pegamos o tamanho indicado no design e colocas font-size, que é FONTE-TAMANHO */
+  font-size: 36px;
+}
+
+/* e repetimos para o h3 */
+.titulo h3 {
+  font-weight: 300;
+  font-size: 24px;
+}
+
+/* colocamos o botão aqui para ficar seguindo a ordem que os elementos aparecem */
+/* para pegar o botão que está dentro da classe tema: */
+.tema button {
+  /* o botão está alinhado diferente do resto do cabeçalho, então vamos usar o código: */
+  align-self: flex-end; 
+   /* ^isso significa que estamos alinhando o elemento sozinho (self = si mesmo) no final da nossa caixa flex */
+ font-size: 24px;
+  font-weight: 400;
+  /* o padding desta vez estão fazendo com dois números só. O primeiro número é cima embaixo, e o segundo direita e esquerda */
+  padding: 8px 16px;
+  /* a cor e a border radius pegamos do Figma */
+  background: #ECF4FF;
+  border-radius: 100px; 
+}
+
+.projetos {
+  /* vamos repetir a flex box aqui para organizar os links */
+  display: flex;
+  /* e queremos indicar a direção que ele vai organizar, e queremos que ele organize em uma COLUNA, então colocamos flex-direção: COLUNA */
+  flex-direction: column;
+  /* para o fundo ficar azul com gradiente, pegamos do Figma */
+  background: linear-gradient(230.65deg, #499CFE 27.49%, #9CC8FC 83.19%);
+/* e colocamos a margem para não ficar tão grudado. queremos só desgrudar de cima, então vamos usar a margin-TOP */
+  margin-top: 32px;
+  /* para arrumar a posição do texto, usando então o preenchimento INTERNO, conforme explicado na linha 31 */
+  /* quando colocamos só margin ou só padding, estamos colocando nas 4 direções. Quando indicamos uma direção (top, bottom, left, right), ele faz apenas essa direção */
+  padding: 32px; 
+  /* para dar o efeito redondo e o efeito de sombra, tiramos do Figma: */
+  box-shadow: 2px 2px 4px rgba(16, 16, 16, 0.42);
+border-radius: 20px;
+}
+
+.projetos-titulo {
+  /* tem uma decoração padrão de lista, que não é a forma que queremos, então vamos tirar com o código: lista-estilo: NENHUM */
+  list-style: none;
+  /* vamos pegar as informações de fontes do Figma */
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.projetos-item {
+  /* para tirar as bolinhas da lista, usando o lista-estilo-TIPO: NENHUM */
+  list-style-type: none;
+  font-size: 24px;
+  font-weight: 400;
+  /* para as linhas não ficarem tão grudadas, mudamos a LINHA-ALTURA */
+  line-height: 48px;
+}
+
+/* para mudar com os links aparecem, vamos puxar todos os elementos A dentro do projetos-item */
+
+.projetos-item a {
+  /* pegamos a cor do Figma e estamos trocando a COR do texto */
+  color: #1C1C1C;
+ /* para tirar o sublinhado, vamos tirar a decoração do texto, com TEXTO-DECORAÇÃO: NENHUM */
+    text-decoration: none; 
+}
+
+/* vamos criar a classe dark no css para mostrar para ele como vai ficar o dark mode (modo escuro) */
+/* começamos só com o gradiente do fundo porque só essa parte esta no body */ 
+
+.dark {
+ background: linear-gradient(236.85deg, #375B86 27.26%, #6B87A9 96.03%);
+}
+
+/* para pegar o container do dark */ 
+/* as infos pegamos todas do Figma */
+.dark .container {
+  background: #333439;
+  color: #F7F7F7;
+}
+
+/* para nao ficar um contraste estranho com o texto de projetos e titulos em branco, vamos deixar eles em preto */
+
+.dark .projetos {
+  color: #1C1C1C;
+}
+
+.dark .tema button { 
+background: #1c1c1c;
+  color: #ffffff;
+    /* para mudar a cor da borda do botao, vamos falar: BORDA: 2px (tamanho), solida (tipo da borda) e COR */
+    border: 2px solid #f7f7f7
+}
